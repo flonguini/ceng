@@ -1,0 +1,20 @@
+<div *ngIf="!isLoading; else loading">
+    <div *ngFor="let item of itens">
+        <p class="title" (click)="expandAccordion(item)">
+            {{item.title}}
+            <span>{{item.active ? '-' : '+'}}</span>
+        </p>
+        <p class="content" [ngClass]="{'active': item.active}">
+            {{item.content}}
+        </p>
+    </div>
+</div>
+
+<ng-template #loading>
+    <div *ngFor="let foo of [1,2,3,4]">
+        <p class="title">
+            <shimmer></shimmer>
+            <span>+</span>
+        </p>
+    </div>
+</ng-template>

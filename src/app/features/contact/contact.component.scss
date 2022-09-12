@@ -1,0 +1,40 @@
+@import "colors";
+@import "sizes";
+
+.grid-container{
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    row-gap: 5em;
+    margin: 3em 0;
+}
+
+.grid-subscribe{
+    display: grid;
+    justify-content: center;
+}
+
+.subscribe{
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    column-gap: 1em;
+    align-items: center;
+    max-width: 750px;
+}
+
+.grid-category{
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (max-width: 630px) {
+    .subscribe{
+        display: grid;
+        grid-template-columns: none;
+        column-gap: none;
+        row-gap: 1em;
+        align-items: center;
+        max-width: 750px;
+    }
+}

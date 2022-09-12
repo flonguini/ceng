@@ -1,0 +1,71 @@
+<div class="grid-container card-shadow radius" 
+    (click)="goToCourseDetail(course)"
+    *ngIf="!isLoading; else loading">
+    <div>
+        <img [src]="course.thumbnail"/>
+    </div>
+    <div class="grid-infos">
+        <div>
+            <h4>{{course.category || 'Sem categoria'}}</h4>
+            <h3>{{course.title}}</h3>
+        </div>
+
+        <div class="grid-professor">
+            <div>
+                img
+            </div>
+            <div class="professor-hour">
+                <div>
+                    <span>Prof. Fernando L. S.</span>
+                </div>
+                <div class="time">
+                   <div>
+                        <img src="../../../assets/card-clock.svg"/> 
+                   </div>
+                   <div>
+                        <span>{{course.duration}}</span>
+                   </div>
+                </div>
+            </div>
+            <div>
+                <h2><span>R$</span>{{course.price }}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #loading>
+    <div class="grid-container card-shadow radius">
+        <div>
+            <shimmer [width]="'275px'" [height]="'175px'"></shimmer>
+        </div>
+        <div class="grid-infos">
+            <div>
+                <h4><shimmer></shimmer></h4>
+                <h3><shimmer [width]="'100px'"></shimmer></h3>
+            </div>
+    
+            <div class="grid-professor">
+                <div>
+                    <shimmer [shape]="'circle'" [width]="'30px'"></shimmer>
+                </div>
+                <div class="professor-hour">
+                    <div>
+                        <span><shimmer></shimmer></span>
+                    </div>
+                    <div class="time">
+                       <div>
+                            <img src="../../../assets/card-clock.svg"/> 
+                       </div>
+                       <div>
+                            <span><shimmer></shimmer></span>
+                       </div>
+                    </div>
+                </div>
+                <div>
+                    <shimmer></shimmer>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

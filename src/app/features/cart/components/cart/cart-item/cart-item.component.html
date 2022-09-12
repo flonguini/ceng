@@ -1,0 +1,49 @@
+<ng-container *ngIf="!item; else loading">
+    <div class="grid-cart-item">
+        <div>
+            <shimmer [height]="'80px'" [width]="'130px'"></shimmer>
+        </div>
+        <div>
+            <shimmer></shimmer>
+        </div>
+        <div>
+        </div>
+        <div class="grid-remove" 
+            (click)="removeItem()"
+            (mouseenter)="onMouseEnter()" 
+            (mouseleave)="onMouseLeave()">
+            <ng-container *ngIf="isMouseOver$ | async as mouseOver">
+                <app-cart-trash [color]="mouseOver"></app-cart-trash>
+            </ng-container>
+            <div>
+                <span>remover</span>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-template #loading>
+    <div class="grid-cart-item">
+        <div>
+            <img [src]="item.thumbnail" />
+        </div>
+        <div>
+            <label class="course-title">{{item.title || '-'}}</label>
+        </div>
+        <div>
+            <label class="price">{{(item.price | currency) || '-'}}</label>
+        </div>
+        <div class="grid-remove" 
+            (click)="removeItem()"
+            (mouseenter)="onMouseEnter()" 
+            (mouseleave)="onMouseLeave()">
+            <ng-container *ngIf="isMouseOver$ | async as mouseOver">
+                <app-cart-trash [color]="mouseOver"></app-cart-trash>
+            </ng-container>
+            <div>
+                <span>remover</span>
+            </div>
+        </div>
+    </div>
+    
+</ng-template>

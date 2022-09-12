@@ -1,0 +1,61 @@
+<div class="grid-container" *ngIf="itens$ | async as review; else loadingOrError">
+    <div class="grid-rate">
+        <span class="rate">{{review?.average | number: '1.1-1'}}</span>
+        <ngb-rating [max]="5" [readonly]="true" [rate]="review.average">
+            <ngb-rating [max]="5" [readonly]="true" [rate]="4"></ngb-rating>
+            <ng-template let-fill="fill">
+                <span class="star" [class.filled]="fill === 100">&#9733;</span>
+            </ng-template>
+        </ngb-rating>
+        <span class="total">{{review?.totalRatingCount}}</span>
+        <span class="avaliacoes">Avaliações</span>
+    </div>
+    <div>
+        <app-rating-count [ratings]="review.totalRatingVm"></app-rating-count>
+    </div>
+</div>
+
+<app-review></app-review>
+
+<ng-template #loadingOrError>
+    <div *ngIf="error$ | async as error; else loading" class="grid-error">
+        <div>
+            <span>Não foi possível carregar as avaliações.</span>
+        </div>
+        <div>
+            <button (click)="retry()">Tentar novamente</button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #loading>
+    <div class="grid-container">
+        <div class="grid-rate">
+            <span class="rate">
+                <shimmer [height]="'50px'" [width]="'50px'"></shimmer>
+            </span>
+            <shimmer [height]="'30px'" [width]="'150px'"></shimmer>
+            <span class="total">
+                <shimmer [height]="'30px'"></shimmer>
+            </span>
+            <span class="avaliacoes">Avaliações</span>
+        </div>
+        <div>
+            <div>
+                <shimmer [height]="'30px'" [width]="'300px'"></shimmer>
+            </div>
+            <div>
+                <shimmer [height]="'30px'" [width]="'300px'"></shimmer>
+            </div>
+            <div>
+                <shimmer [height]="'30px'" [width]="'300px'"></shimmer>
+            </div>
+            <div>
+                <shimmer [height]="'30px'" [width]="'300px'"></shimmer>
+            </div>
+            <div>
+                <shimmer [height]="'30px'" [width]="'300px'"></shimmer>
+            </div>
+        </div>
+    </div>
+</ng-template>

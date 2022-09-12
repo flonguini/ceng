@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <div class="grid-container max-width">
+        <div>
+            <div>
+                <app-about></app-about>
+            </div>
+            <div>
+                <ul>
+                    <li *ngFor="let r of routes" routerLink="{{r.path}}" [routerLinkActive]="['is-active']">
+                        {{r.data.Name}}
+                    </li>
+                </ul>
+            </div>
+            <div class="outlet">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    
+        <div>
+            <app-detail></app-detail>
+        </div>
+    </div>
+</div>

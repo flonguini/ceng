@@ -1,0 +1,42 @@
+h1 {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 42px;
+    color: #313032;
+}
+
+.grid-course-infos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 2.5em;
+}
+
+.course-infos-item {
+    grid: grid;
+    margin: 1.5em 0;
+    span {
+        display: block;
+        line-height: 1.25em;
+    }
+}
+
+.star {
+    font-size: 1.5rem;
+    color: #E9E9E9;
+}
+
+.filled {
+    color: #E8B909;
+}
+
+@media screen and (max-width: 845px) {
+    .grid-course-infos {
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (max-width: 635px) {
+    .grid-course-infos {
+        margin-bottom: 0.5em;
+    }
+}

@@ -1,0 +1,45 @@
+<div *ngIf="itens$ | async as reviews; else errorOrLoading">
+    <div *ngIf="reviews.length > 0; else noReview">
+        <div *ngFor="let review of reviews">
+            <div class="grid-name">
+                <div>
+                    <p class="name">{{review?.studentName}}</p>
+                </div>
+                <div>
+                    <p>{{review.date | dateonlytotext}}</p>
+                </div>
+            </div>
+            
+            <div class="grid-user">
+                <div>
+                    <div class="pic">{{review?.studentInitials}}</div>
+                </div>
+                <div>
+                    <p>{{review?.comment}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #noReview>
+    <span>Nenhuma avaliação cadastrada</span>
+</ng-template>
+
+<ng-template #errorOrLoading>
+    <div *ngIf="error$ |async as error; else loading" class="grid-error">
+        <div>
+            <span>Não foi possível carregar os commentários.</span>
+        </div>
+        <div>
+            <button (click)="retry()">Tentar novamente</button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #loading>
+    <app-loading-review></app-loading-review>
+    <app-loading-review></app-loading-review>
+    <app-loading-review></app-loading-review>
+    <app-loading-review></app-loading-review>
+</ng-template>

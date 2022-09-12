@@ -1,0 +1,25 @@
+h2{
+    margin: 2em 0 1em 0;
+}
+
+ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style-position: inside;
+}
+
+span{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #9F9FA5;
+}
+
+
+li{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    color: #9F9FA5;
+    padding-top: 1em;
+}

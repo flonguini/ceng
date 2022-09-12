@@ -1,0 +1,37 @@
+.grid-about{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    column-gap: 1em;
+    padding: 0 2em;
+}
+
+@media screen and (max-width: 1150px) {
+    .grid-about{
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: auto auto;
+        row-gap: 2em;
+        padding: 0 2em;
+    }
+
+    .image{
+        justify-self: center;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    .image{
+        justify-self: center;
+        width: 400px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .image{
+        width: 250px;
+        height: auto;
+    }
+}

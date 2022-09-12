@@ -1,0 +1,127 @@
+@import "colors";
+
+header{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+	column-gap: 2em;
+    height: 80px;
+    align-items: center;
+}
+
+.grid-nav{
+	display: flex;
+	align-items: center;
+	gap: 1em;
+}
+
+nav{
+	border-right: 2px solid $yellow;
+}
+.logo-mobile{
+	display: none;
+}
+
+.arrow-mobile{
+	display: none;
+}
+
+img{
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1116px) {
+	a{
+		padding: 5px 20px;
+	}
+}
+
+@media screen and (max-width: 1070px) {
+	a{
+		padding: 5px 15px;
+	}
+}
+
+@media screen and (max-width: 995px) {
+	a{
+		padding: 5px 10px;
+	}
+}
+
+@media screen and (max-width: 890px) {
+	header{
+		display: grid;
+		grid-template-columns: none;
+		grid-template-rows: repeat(3, auto);
+		height: auto;
+		background-color: $menu-mobile-background;
+		width: 100vw;
+		align-items: center;
+		justify-content: center;
+		row-gap: 1em;
+	}
+
+	a{
+		padding: 5px 0;
+		display: block;
+		color: lighten($menu-link-text, 20%);
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 14px;
+		border-bottom: 3px solid transparent;
+		text-align: center;
+	}
+		
+	.logo-mobile{
+		display: block;
+		margin-top: 1em;
+	}
+	
+	.logo-web, button{
+		display: none;
+	}
+	
+	.arrow-mobile{
+		display: grid;
+		margin-bottom: 1em;
+	}
+
+	.row3{
+		display: grid;
+		justify-content: center;
+	}
+
+	.show{
+		display: block;
+	}
+
+	.hide{
+		display: none;
+	}
+
+	.open{
+		animation: open 1.0s ease-in;
+		transform: rotate(-180deg);
+	}
+
+	.close{
+		animation: close 1.0s ease-in;
+	}
+
+	@keyframes open {
+		0%{
+			transform: rotate(-180deg);
+		}
+		100%{
+			transform: rotate(0deg);
+		}
+	}
+
+	@keyframes close {
+		0%{
+			transform: rotate(0deg);
+		}
+		100%{
+			transform: rotate(180deg);
+		}
+	}
+}

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;600;700;800&display=swap');
+@import "sizes";
+@import "colors";
+
+h1{
+    font-size: $biggest;
+    font-weight: 700;
+}
+
+h2{
+    font-size: $bigger;
+}
+
+h3{
+    font-size: $big;
+}
+
+h4{
+    font-size: $regular;
+}
+
+h5{
+    font-size: $small;
+}
+
+h6{
+    font-size: $smallest;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: $title-color;
+}
+
+.about-us-p{
+    color: $grey;
+    font-size: $big;
+    padding-bottom: 1.2em;
+    text-align: justify;
+}
+
+label{
+    font-weight: bold;
+    color: $darkest-grey;
+}
+
+.card-text{
+    justify-self: center;
+    color: $grey;
+    font-weight: 700;
+}
+
+.news{
+    color: $news-grey;
+    font-weight: 400;
+}
+
+.news-text{
+    color: $grey;
+    font-weight: 400;
+}
+
+.what-card{
+    color: $what-card-grey;
+    font-weight: 700;
+    font-size: $big;
+    text-align: center;
+}
+
+.contact{
+    color: $white;
+    font-size: $big;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+}
+
+.help-card-category{
+    font-size: 12px;
+    color: $help-card-category;
+}
+
+.help-card-title{
+    font-weight: 600;
+    font-size: 14px;
+    color: $help-card-title;
+}
+
+.course-category{
+    font-weight: 400;
+    font-size: $regular;
+    line-height: 26px;
+    letter-spacing: 0.2px;
+    color: $news-grey;
+}
+
+.course-value{
+    font-weight: 700;
+    font-size: $regular;
+    line-height: 26px;
+    letter-spacing: 0.2px;
+    color: $course-value;
+}

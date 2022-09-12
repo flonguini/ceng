@@ -1,0 +1,43 @@
+.card-id{
+    background: #FFFFFF;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 2.125em 1.25em;
+}
+
+input{
+    background: rgba(149, 146, 166, 0.1);
+    border-radius: 5px;
+    border: none;
+}
+
+.form-id{
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    column-gap: 3em;
+}
+
+.btn-end{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2em;
+}
+
+button{
+    width: 250px;
+}
+
+label{
+    display: block;
+    margin: 1em 0 0.5em 0;
+}
+
+p{
+    font-size: 16px;
+    line-height: 20px;
+    color: #666C7E;
+}
+
+span{
+    color: #E6B721;
+}

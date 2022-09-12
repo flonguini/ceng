@@ -1,0 +1,23 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: 70px 60px 350px 1fr;
+    height: 21cm;
+}
+
+.sidebar{
+    background-color: #312F31;
+}
+
+.yellow{
+    background-color: #E5B621;
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+}
+
+.light-grey{
+    background-color: #4E4D50;
+    height: 400px;
+    z-index: 10;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}

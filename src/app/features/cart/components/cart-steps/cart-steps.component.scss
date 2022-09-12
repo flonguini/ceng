@@ -1,0 +1,12 @@
+.grid-cart-step{
+    display: grid;
+    grid-template-columns: 60px 1fr 60px 1fr 60px 1fr 60px;
+    align-items: center;
+    column-gap: 0.5em;
+    width: 800px;
+    margin-bottom: 4em;
+}
+
+hr{
+    border: 1px solid rgba(230, 183, 33, 0.5);
+}

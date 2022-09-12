@@ -1,0 +1,19 @@
+@import "colors";
+@import "sizes";
+
+select{
+    height: 3.25em;
+    border: 1px solid $input-border;
+    font-size: $big;
+    border-radius: 0.5em;
+    width: 100%;
+    text-indent: 1.5em;
+}
+
+::placeholder{
+    color: $input-placeholder-color;
+}
+
+select:focus{
+    outline: none;
+}

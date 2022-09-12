@@ -1,0 +1,66 @@
+.grid-value{
+    display: grid;
+    justify-items: center;
+    margin-bottom: 2em;
+}
+
+.coin{
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: -0.01em;
+    color: #3DAE78;
+    text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.05);
+}
+
+.price{
+    font-weight: 800;
+    font-size: 80px;
+    line-height: 50px;
+    letter-spacing: -0.01em;
+    color: #3DAE78;
+    text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.05);
+}
+
+.course-price{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #9F9FA5;
+}
+
+button{
+    background: #4BDE97;
+    border-radius: 5px;
+    height: 94px;
+    width: 263px;
+    font-weight: 800;
+    font-size: 20px;
+    margin-top: 1em;
+}
+
+///////////////////////////
+
+.item{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 2em 0;
+    border-bottom: 2px solid rgba(149, 146, 166, 0.2);
+}
+
+.category{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #9F9FA5;
+    text-transform: uppercase;
+}
+
+.value{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    color: #9F9FA5;
+}

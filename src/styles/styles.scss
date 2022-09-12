@@ -1,0 +1,100 @@
+@import "colors";
+@import "typos";
+@import "buttons";
+@import "inputs";
+@import "selects";
+@import "textarea";
+@import "shadows";
+@import "animations";
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    background-color: $background-color;
+    overflow-x: hidden;
+}
+
+.justify-center{
+    display: grid;
+    justify-content: center;
+}
+
+.max-width{
+    max-width: $max-width;
+}
+
+.wrapper{
+    display: grid;
+    justify-content: center;
+}
+
+.bg-white{
+    background-color: $white;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+}
+
+.responsive-img-85 {
+    width: 85%;
+    height: auto;
+}
+
+a{
+	display: inline-block;
+	color: lighten($menu-link-text, 20%);
+	font-weight: bold;
+	font-size: 14px;
+    border-bottom:3px solid transparent;
+	text-decoration: none;
+    margin-right: 50px;
+    position: relative;
+    padding: 16px 0;
+    margin: 0 12px;
+    letter-spacing: 1px;
+    line-height: 16px;
+    transition: color 0.1s, background-color 0.1s, padding 0.2s ease-in;
+}
+
+a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: $yellow;
+    transform-origin: right top;
+    transform: scale(0,1);
+    transition: color 0.1s, transform 0.2s ease-out;
+}
+
+a:hover::before,
+a:focus::before {
+    transform-origin: left top;
+    transform: scale(1,1);
+}
+
+.visually-hidden{
+    display: none;
+}
+
+.d-inline-flex{
+    display: inline-flex;
+}
+
+.grid-error{
+    display: grid;
+    justify-items: center;
+    margin-top: 5em;
+    button{
+        margin-top: 1em;
+    }
+}

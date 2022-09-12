@@ -1,0 +1,54 @@
+.grid-cart-item{
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    padding: 1em 1.125em;
+    border-radius: 10px;
+    column-gap: 2em;
+    margin-bottom: 1em;
+    min-height: 5.5em;
+}
+
+img{
+    filter: drop-shadow(4px 8px 14px rgba(0, 0, 0, 0.1));
+    width: 130px;
+    height: 80px;
+}
+
+.course-title{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    color: #666C7E;
+}
+
+.price{
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 20px;
+    text-align: right;
+    color: #3DAE78;
+}
+
+span{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    color: #DADCE4;
+}
+
+.grid-remove{
+    display: grid;
+    grid-template-rows: repeat(2, 18px);
+    justify-items: center;
+    align-items: center;
+}
+
+.grid-remove:hover{
+    cursor: pointer;
+    span{
+        color: #F26464;
+    }
+}

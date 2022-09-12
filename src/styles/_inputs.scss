@@ -1,0 +1,25 @@
+@import "colors";
+@import "sizes";
+
+input{
+    height: 3.25em;
+    border: 1px solid $input-border;
+    font-size: $big;
+    border-radius: 0.5em;
+    width: 100%;
+    text-indent: 1.5em;
+}
+
+::placeholder{
+    color: $input-placeholder-color;
+}
+
+input:focus{
+    outline: none;
+}
+
+@media screen and (max-width: 360px) {
+    input{
+        font-size: $small;
+    }
+}

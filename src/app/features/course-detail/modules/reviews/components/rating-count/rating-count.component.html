@@ -1,0 +1,38 @@
+<div *ngIf="ratings.length > 0; else noRating" >
+    <div class="grid-rating" *ngFor="let r of ratings">
+        <div>
+            <span class="star-count">{{r.rate}} estrelas</span>
+        </div>
+        <div>
+            <ngb-rating [max]="5" [readonly]="true" [rate]="r.rate">
+                <ngb-rating [max]="5" [readonly]="true" [rate]="4"></ngb-rating>
+                <ng-template let-fill="fill">
+                    <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                </ng-template>
+            </ngb-rating>
+        </div>
+        <div>
+            <span class="total">{{r.countByRate}} avaliações</span>
+        </div>
+    </div>
+</div>
+
+<ng-template #noRating>
+    <div class="grid-rating" *ngFor="let r of [5,4,3,2,1]">
+        <div>
+            <span class="star-count">{{r}} estrelas</span>
+        </div>
+        <div>
+            <ngb-rating [max]="5" [readonly]="true" [rate]="0">
+                <ngb-rating [max]="5" [readonly]="true" [rate]="4"></ngb-rating>
+                <ng-template let-fill="fill">
+                    <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                </ng-template>
+            </ngb-rating>
+        </div>
+        <div>
+            <span class="total">0 avaliações</span>
+        </div>
+    </div>
+
+</ng-template>

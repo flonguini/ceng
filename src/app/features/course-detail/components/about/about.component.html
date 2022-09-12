@@ -1,0 +1,57 @@
+<ng-container *ngIf="itens$ | async as course; else loadingOrError">
+    <div>
+        <h1>{{course?.title || '-'}}</h1>
+    </div>
+    <div class="grid-course-infos">
+        <div class="course-infos-item">
+            <span class="course-category">Professor</span>
+            <span class="course-value">{{ course?.professor || '-' }}</span>
+        </div>
+        <div class="course-infos-item">
+            <span class="course-category">Avaliação do curso</span>
+            <ngb-rating [max]="5" [readonly]="true" [rate]="course.rating">
+                <ng-template let-fill="fill" >
+                    <span class="star" [class.filled]="fill === 100">&#9733;</span>
+                </ng-template>
+            </ngb-rating>
+        </div>
+        <div class="course-infos-item">
+        </div>
+    </div>
+
+    <img class="responsive-img-85" [src]="course?.thumbnail"> 
+</ng-container>
+
+
+<ng-template #loadingOrError>
+    <div *ngIf="error$ | async as error; else loading" class="grid-error">
+        <div>
+            <span>Não foi possível carregar as informações do curso.</span>
+        </div>
+        <div>
+            <button (click)="retry()">Tentar novamente</button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #loading>
+    <div>
+        <h2><shimmer [width]="'20%'" [height]="'20px'"></shimmer></h2>
+        <h1><shimmer [width]="'45%'" [height]="'24px'"></shimmer></h1>
+    </div>
+    <div class="grid-course-infos">
+        <div class="course-infos-item">
+            <span class="course-category">Professor</span>
+            <span class="course-value"><shimmer [width]="'30%'"></shimmer></span>
+        </div>
+        <div class="course-infos-item">
+            <span class="course-category">Categoria</span>
+            <span class="course-value"><shimmer [width]="'30%'"></shimmer></span>
+        </div>
+        <div class="course-infos-item">
+            
+        </div>
+    </div>
+
+    <shimmer [width]="'80%'" [height]="'200px'"></shimmer>
+</ng-template>

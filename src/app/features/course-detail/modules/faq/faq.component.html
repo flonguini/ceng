@@ -1,0 +1,37 @@
+<h2>Esclarecimentos</h2>
+
+<ul>
+    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem cupiditate modi consequatur eaque
+        accusantium ea ipsum voluptate, laudantium ipsa doloremque suscipit facilis a voluptatum numquam nobis
+        blanditiis alias veritatis fugiat.</li>
+    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem cupiditate modi consequatur eaque
+        accusantium ea ipsum voluptate, laudantium ipsa doloremque suscipit facilis a voluptatum numquam nobis
+        blanditiis alias veritatis fugiat.</li>
+</ul>
+
+<h2>Perguntas frequentes</h2>
+
+<div *ngIf="itens$ | async as faq; else loadingOrError">
+    <div *ngIf="faq.length > 0; else nofaq">
+        <app-accordion [itens]="faq"></app-accordion>
+    </div>
+</div>
+
+<ng-template #nofaq>
+    Nenhuma pergunta cadastrada
+</ng-template>
+
+<ng-template #loadingOrError>
+    <div *ngIf="error$ | async as error; else loading" class="grid-error">
+        <div>
+            <span>Não foi possível carregar as perguntas.</span>
+        </div>
+        <div>
+            <button (click)="retry()">Tentar novamente</button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #loading>
+    <app-accordion [isLoading]="true"></app-accordion>
+</ng-template>

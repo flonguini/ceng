@@ -1,0 +1,54 @@
+<ng-container *ngIf="itens$ | async as cv; else errorOrLoading">
+    <ng-container *ngIf="cv.sections.length > 0; else noLesson">
+        <ng-container *ngFor="let section of cv.sections">
+            <h2>{{section.title}}</h2>
+            <ng-container *ngIf="section.lessons.length > 0; else noLesson">
+                <div class="grid-lesson" *ngFor="let lesson of section.lessons">
+                    <div class="lesson-icon">
+                        <img src="../../../../../assets/video.svg">
+                    </div>
+                    <div>
+                        <p>{{lesson.name}}</p>
+                    </div>
+                    <div>
+                        <p>{{lesson.duration}}</p>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+    </ng-container>
+</ng-container>
+
+<ng-template #noLesson>
+    <span>
+        Nenhuma aula cadastrada
+    </span>
+</ng-template>
+
+<ng-template #errorOrLoading>
+    <div *ngIf="error$ | async as error; else loading" class="grid-error">
+        <div>
+            <span>Não foi possível carregar a lista de aulas.</span>
+        </div>
+        <div>
+            <button (click)="retry()">Tentar novamente</button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #loading>
+    <div *ngFor="let section of [1,2,3,4,5]">
+        <h2><shimmer [height]="'25px'"></shimmer></h2>
+        <div class="grid-lesson" *ngFor="let lesson of [1,2,3]">
+            <div>
+                <img src="../../../../../assets/video.svg">
+            </div>
+            <div>
+                <shimmer></shimmer>
+            </div>
+            <div>
+                <shimmer [width]="'100px'"></shimmer>
+            </div>
+        </div>
+    </div>
+</ng-template>

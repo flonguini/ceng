@@ -1,0 +1,64 @@
+<div class="wrapper" *ngIf="store.stepStore.cartStep$ | async as step">
+    <div class="grid-cart-header">
+        <div>
+            <h1>{{step}}</h1>
+        </div>
+        <div>
+            <app-cart-steps [step]="step"></app-cart-steps>
+        </div>
+    </div>
+    <div>
+        <ng-container [ngSwitch]="step">
+            <ng-container *ngSwitchCase="'Carrinho'" [ngTemplateOutlet]="cart"></ng-container>
+            <ng-container *ngSwitchCase="'Identificação'" [ngTemplateOutlet]="id"></ng-container>
+            <ng-container *ngSwitchCase="'Pagamento'" [ngTemplateOutlet]="payment"></ng-container>
+            <ng-container *ngSwitchCase="'Finalização'" [ngTemplateOutlet]="finish"></ng-container>
+        </ng-container>
+    </div>
+</div>
+
+<ng-template #cart>
+    <ng-container *ngIf="loadingService.loading$ | async; else myCart">
+        <div class="grid-cart">
+            <div>
+                <ng-container *ngFor="let count of [1,2,3]">
+                    <app-cart-item></app-cart-item>
+                </ng-container>
+                <app-cupom></app-cupom>
+            </div>
+            <div>
+                <app-cart-totals></app-cart-totals>
+                <button (click)="changeStep()">Próximo passo</button>
+            </div>
+        </div>
+    </ng-container>
+</ng-template>
+
+<ng-template #myCart>
+    <ng-container *ngIf="store.courseStore.cart$ | async as cart">
+        <div class="grid-cart">
+            <div>
+                <ng-container *ngFor="let course of cart.courses">
+                    <app-cart-item [item]="course"></app-cart-item>
+                </ng-container>
+                <app-cupom></app-cupom>
+            </div>
+            <div>
+                <app-cart-totals></app-cart-totals>
+                <button (click)="changeStep()">Próximo passo</button>
+            </div>
+        </div>
+    </ng-container>
+</ng-template>
+
+<ng-template #id>
+    <app-id></app-id>
+</ng-template>
+
+<ng-template #payment>
+    payment
+</ng-template>
+
+<ng-template #finish>
+    <app-finished></app-finished>
+</ng-template>

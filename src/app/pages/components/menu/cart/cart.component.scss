@@ -1,0 +1,23 @@
+.grid-cart{
+    position: relative;
+    cursor: pointer;
+}
+
+.qtd{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    background-color: #F26464;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    h4{
+        text-align: center;
+        color: white;
+        margin-top: 1px;
+    }
+}
+
+.cart{
+    margin-top: 5px;
+}

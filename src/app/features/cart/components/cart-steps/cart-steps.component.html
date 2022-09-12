@@ -1,0 +1,23 @@
+<div class="grid-cart-step" *ngIf="store.stepStore.cartStep$ | async as currentStep">
+    <div>
+        <app-cart-step-item [step]="'Carrinho'" [currentStep]="currentStep"></app-cart-step-item>
+    </div>
+    <div>
+        <hr>
+    </div>
+    <div>
+        <app-cart-step-item [step]="'Identificação'" [currentStep]="currentStep"></app-cart-step-item>
+    </div>
+    <div>
+        <hr>
+    </div>
+    <div>
+        <app-cart-step-item [step]="'Pagamento'" [currentStep]="currentStep"></app-cart-step-item>
+    </div>
+    <div>
+        <hr>
+    </div>
+    <div>
+        <app-cart-step-item [step]="'Finalização'" [currentStep]="currentStep"></app-cart-step-item>
+    </div>
+</div>

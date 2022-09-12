@@ -1,0 +1,37 @@
+.grid-container{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    background-color: #F9F9F9;
+    justify-items: center;
+    align-items: center;
+}
+
+.grid-itens{
+    display: grid;
+    justify-items: center;
+    background-color: white;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 2em 10em;
+}
+
+h1{
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 82px;
+    color: #4D4E50;
+}
+
+h2{
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    color: #AAAAAA;
+}
+
+button{
+    width: 250px;
+    margin-top: 2em;
+}

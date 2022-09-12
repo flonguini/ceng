@@ -1,0 +1,33 @@
+.grid-rating {
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr;
+    align-items: center;
+    justify-items: start;
+}
+
+.star-count {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: right;
+    letter-spacing: 0.2px;
+    color: #9f9fa5;
+}
+
+.total{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.2px;
+    color: #9F9FA5;
+}
+
+.star {
+    font-size: 1.5rem;
+    padding-right: 0.25em;
+    color: #E9E9E9;
+}
+
+.filled {
+    color: #E8B909;
+}

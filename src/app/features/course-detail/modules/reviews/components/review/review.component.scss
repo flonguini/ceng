@@ -1,0 +1,42 @@
+.grid-name{
+    margin-top: 3em;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2em;
+}
+
+.grid-user{
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    column-gap: 1.5em;
+    justify-items: center;
+    align-items: center;
+}
+
+.name{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #313032;
+}
+
+p{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: justify;
+    color: #9F9FA5;
+}
+
+.pic{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #E8B909;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}

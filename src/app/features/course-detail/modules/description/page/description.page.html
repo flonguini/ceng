@@ -1,0 +1,30 @@
+<div *ngIf="itens$ | async as description; else loadingOrError">
+    <span>{{description?.sumarry || 'Sem descrição'}}</span>
+
+    <h2>Principais características</h2>
+    <ul>
+        <li *ngFor="let charc of description?.characteristics">{{charc?.description || '-'}}</li>
+    </ul>
+
+    <h2>Para quem é esse curso</h2>
+    <ul>
+        <ng-container *ngFor="let audience of description?.targetAudience">
+            <li>{{audience?.description || '-'}}</li>
+        </ng-container>
+    </ul>
+</div>
+
+<ng-template #loadingOrError>
+    <div *ngIf="error$ | async as error; else loading">
+        deu ruim<br>
+        <button (click)="retry()">Tentar novamente</button>
+    </div>
+</ng-template>
+
+<ng-template #loading>
+    <shimmer [width]="'55%'"></shimmer>
+    <shimmer [width]="'75%'"></shimmer>
+    <shimmer></shimmer>
+    <shimmer [width]="'60%'"></shimmer>
+    <shimmer [width]="'55%'"></shimmer>
+</ng-template>

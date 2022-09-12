@@ -1,0 +1,59 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 2em;
+}
+
+@media screen and (max-width:770px) {
+    .grid-container {
+        grid-template-columns: none;
+        row-gap: 2em;
+        justify-content: center;
+        grid-template-rows: 1fr 1fr;
+    }   
+}
+
+.grid-rate {
+    display: grid;
+    justify-content: center;
+}
+
+.rate {
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 50px;
+    text-justify: center;
+    display: flex;
+    justify-content: center;
+    color: #e8b909;
+    text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.05);
+}
+
+.total {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #9f9fa5;
+    margin-top: 0.5em;
+}
+
+.avaliacoes {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #9f9fa5;
+}
+
+.star {
+    font-size: 2.5rem;
+    padding-right: 0.25em;
+    color: #E9E9E9;
+}
+
+.filled {
+    color: #E8B909;
+}

@@ -1,0 +1,63 @@
+<div class="card-id" *ngIf="step$ | async as step">
+    <ng-container [ngSwitch]="step">
+        <ng-container *ngSwitchCase="'VerifyEmail'" [ngTemplateOutlet]="id"></ng-container>
+        <ng-container *ngSwitchCase="'Register'" [ngTemplateOutlet]="registerHtml"></ng-container>
+        <ng-container *ngSwitchCase="'SignIn'" [ngTemplateOutlet]="loginHtml"></ng-container>
+    </ng-container>
+</div>
+
+<ng-template #id>
+    <form [formGroup]="formGroup">
+        {{formGroup.value | json}}
+        <label>E-mail</label>
+        <div class="form-id">
+            <div>
+                <input placeholder="Digite seu e-mail..." [formControlName]="FORM.email" />
+                <app-form-error-message [formMessage]="formGroup.get(FORM.email)"></app-form-error-message>
+            </div>
+            <div>
+                <ng-container *ngIf="foo.loading$ | async as loading; else showbtn">
+                    <app-loading-button></app-loading-button>
+                </ng-container>
+                <ng-template #showbtn>
+                    <button (click)="verifyUser()" [disabled]="formGroup.invalid">Próximo passo</button>
+                </ng-template>
+            </div>
+        </div>
+    </form>
+</ng-template>
+
+<ng-template #registerHtml>
+    <form [formGroup]="formGroup" (ngSubmit)="register()">
+        <div>
+            <label>Nome completo</label>
+            <input placeholder="Digite seu nome..." formControlName="name" />
+            <app-form-error-message [formMessage]="formGroup.get(FORM.name)"></app-form-error-message>
+            <label>E-mail</label>
+            <input placeholder="Digite seu e-mail..." formControlName="email" />
+            <app-form-error-message [formMessage]="formGroup.get(FORM.email)"></app-form-error-message>
+            <label>Senha</label>
+            <input placeholder="Digite sua senha..." formControlName="password" type="password" />
+            <app-form-error-message [formMessage]="formGroup.get(FORM.password)"></app-form-error-message>
+        </div>
+        <div class="btn-end">
+            <button type="submit">Próximo passo</button>
+        </div>
+    </form>
+</ng-template>
+
+<ng-template #loginHtml>
+    <form [formGroup]="formGroup" (ngSubmit)="login()">
+        <div>
+            <p>Olá, <span>{{nome}}!</span> Que bom te ver aqui de novo!</p>
+            <label>E-mail</label>
+            <input formControlName="email" readonly formControlName="email" />
+            <label>Senha</label>
+            <input placeholder="Digite sua senha..." type="password" formControlName="password" />
+            <app-form-error-message [formMessage]="formGroup.get('password')"></app-form-error-message>
+            <div class="btn-end">
+                <button type="submit">Entrar</button>
+            </div>
+        </div>
+    </form>
+</ng-template>

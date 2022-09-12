@@ -1,0 +1,59 @@
+.grid-our-professors{
+    display: grid;
+    justify-content: end;
+    margin-bottom: 5em;
+}
+
+.grid-professors{
+    display: grid;
+    column-gap: 3em;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card{
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    width: 250px;
+    height: 300px;
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-content: center;
+}
+
+.card:hover{
+    animation: moveUp 5s ease-in-out;
+}
+
+
+@keyframes moveUp {
+    0%, 100% {
+      transform: translateY(-10px);
+    }
+}
+
+@media screen and (max-width: 900px){
+    .grid-professors{
+        display: grid;
+        column-gap: 1em;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 835px){
+    .grid-professors{
+        display: grid;
+        column-gap: 1em;
+        row-gap: 1em;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .grid-professors{
+        display: grid;
+        column-gap: 1em;
+        row-gap: 1em;
+        justify-self: center;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

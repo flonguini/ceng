@@ -1,0 +1,21 @@
+.grid-name{
+    margin-top: 3em;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 2em;
+}
+
+.grid-user{
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    column-gap: 1.5em;
+    align-items: center;
+}
+
+.pic{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #E8B909;
+}

@@ -1,0 +1,1 @@
+export type CartStep = "Carrinho" | "Identificação" | "Pagamento" | "Finalização";

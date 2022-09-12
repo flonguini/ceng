@@ -1,0 +1,18 @@
+.grid-container{
+    display: grid;
+    grid-template-rows: 10.9375em 1fr;
+    width: 17.1875em;
+    height: 15.9375em;
+    border-radius: 0.625em;
+    background-color: white;
+}
+
+.infos{
+    display: block;
+    padding: 0.5em 1.5em;
+}
+
+iframe{
+    border-top-left-radius: 0.625em;
+    border-top-right-radius: 0.625em;
+}

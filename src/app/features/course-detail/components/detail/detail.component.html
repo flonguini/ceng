@@ -1,0 +1,84 @@
+<ng-container *ngIf="itens$ | async as info; else loadingOrError">
+    <div class="grid-value">
+        <div>
+            <span class="coin">R$</span><span class="price">{{info?.price || '-'}}</span>
+        </div>
+        <div>
+            <span class="course-price">Valor do curso</span>
+        </div>
+        <div>
+            <button (click)="addToCart(info)">Quero me matricular</button>
+        </div>
+    </div>
+
+    <div>
+        <div class="item">
+            <img src="../../../../../assets/matriculados.svg">
+            <span class="category">Matriculados:</span>
+            <span class="value">-</span>
+        </div>
+        <div class="item">
+            <img src="../../../../../assets/duracao.svg">
+            <span class="category">Duração:</span>
+            <span class="value">{{info?.duration || '-'}}</span>
+        </div>
+        <div class="item">
+            <img src="../../../../../assets/nivel.svg">
+            <span class="category">Nível:</span>
+            <span class="value">-</span>
+        </div>
+        <div class="item">
+            <img src="../../../../../assets/categoria.svg">
+            <span class="category">Categoria:</span>
+            <span class="value">{{info?.category || '-'}}</span>
+        </div>
+    </div>
+</ng-container>
+
+<ng-template #loadingOrError>
+    <div *ngIf="error$ | async as error; else loading" class="grid-error">
+        <div>
+            <span>Não foi possível carregar as informações do curso.</span>
+        </div>
+        <div>
+            <button (click)="retry()">Tentar novamente</button>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #loading>
+    <div class="grid-value">
+        <div>
+            <span class="coin"><shimmer [width]="'100px'" [height]="'50px'"></shimmer></span>
+        </div>
+        <div>
+            <span class="course-price">Valor do curso</span>
+        </div>
+        <div>
+            <button>Quero me matricular</button>
+        </div>
+    </div>
+    
+    <div>
+        <div class="item">
+            <img src="../../../../../assets/matriculados.svg">
+            <span class="category">Matriculados:</span>
+            <span><shimmer [width]="'50px'" [height]="'30px'"></shimmer></span>
+        </div>
+        <div class="item">
+            <img src="../../../../../assets/duracao.svg">
+            <span class="category">Duração:</span>
+            <span><shimmer [width]="'90px'" [height]="'30px'"></shimmer></span>
+        </div>
+        <div class="item">
+            <img src="../../../../../assets/nivel.svg">
+            <span class="category">Nível:</span>
+            <span><shimmer [width]="'120px'" [height]="'30px'"></shimmer></span>
+        </div>
+        <div class="item">
+            <img src="../../../../../assets/categoria.svg">
+            <span class="category">Categoria:</span>
+            <span><shimmer [width]="'100px'" [height]="'30px'"></shimmer></span>
+        </div>
+    </div>
+</ng-template>

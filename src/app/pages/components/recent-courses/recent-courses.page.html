@@ -1,0 +1,27 @@
+<app-title-subtitle class="justify-center"
+    [title]="'Cursos Recentes'"
+    [subtitle]="'Art party meggings subway tile, selfies helvetica tofu before they sold out slow-carb chillwave humblebrag vape heirloom meh shaman.'">
+</app-title-subtitle>
+
+<div *ngIf="courses$ | async as courses; else loadingOrError">
+    <div class="grid-recent-courses max-width">
+        <div *ngFor="let course of courses">
+            <app-course-card [course]="course"></app-course-card>
+       </div>
+    </div>
+</div>
+
+<ng-template #loadingOrError>
+    <div *ngIf="error$ | async else loading">
+         Não foi possível carregar os cursos, tente novamente
+    </div>
+</ng-template>
+
+<ng-template #loading>
+    <div class="grid-recent-courses max-width">
+         <app-course-card [isLoading]="true"></app-course-card>
+         <app-course-card [isLoading]="true"></app-course-card>
+         <app-course-card [isLoading]="true"></app-course-card>
+         <app-course-card [isLoading]="true"></app-course-card>
+    </div>
+</ng-template>

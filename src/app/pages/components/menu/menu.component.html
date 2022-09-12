@@ -1,0 +1,31 @@
+<div class="justify-center bg-white">
+    <header class="max-width">
+        <div>
+            <img src="../../../../assets/logo/full-logo-light.svg" routerLink="/" class="logo-web">
+            <img src="../../../../assets/logo/logo-dark-mobile.svg" routerLink="/" class="logo-mobile">
+        </div>
+    
+        <div class="grid-nav">
+            <nav [ngClass]="isOpen ? 'show' : 'hide'">
+                <a (click)="closeMenu()" routerLink="about-us" >SOBRE</a>
+                <a (click)="closeMenu()" href="#">CURSOS</a>
+                <a (click)="closeMenu()" href="https://blogcanaldaengenharia.com.br" target="_blank">BLOG</a>
+                <a (click)="closeMenu()" routerLink="help">AJUDA</a>
+                <a (click)="closeMenu()" routerLink="contact">CONTATO</a>                
+            </nav>
+            <app-cart routerLink="/cart"></app-cart>
+        </div>
+    
+        <div class="row3">
+            <button class="btn-student">
+                <img class="person-yellow" src="../../../../assets/person.svg" />
+                <img class="person-white" src="../../../../assets/person-white.svg" />
+                <span>ÁREA DO ALUNO</span>
+            </button>
+            <img src="../../../../assets/mobile-menu-arrow.svg" 
+                class="arrow-mobile"
+                [ngClass]="isOpen ? 'close' : 'open'"
+                (click)="toogle()">
+        </div>
+    </header>
+</div>

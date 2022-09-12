@@ -1,0 +1,44 @@
+.grid-finish{
+    background: #FFFFFF;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 5em 6em;
+    max-width: 900px;
+    display: grid;
+    justify-items: center;
+}
+
+h1{
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 50px;
+    text-align: center;
+    color: #E6B721;
+}
+
+h2{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    color: #4D4E50;
+}
+
+p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #666C7E;
+    margin-top: 1em;
+}
+
+span{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #E6B721;
+}
+
+button{
+    margin-top: 3em;
+}

@@ -1,0 +1,81 @@
+.radius{
+    border-radius: 0.625em;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-rows: 10.9375em 1fr;
+    width: 17.1875em;
+    height: 21.5625em;
+    cursor: pointer;
+}
+
+.grid-infos{
+    display: grid;
+    background-color: white;
+    padding: 1.25em 1.25em 0 1.25em;
+    border-bottom-right-radius: 0.625em;
+    border-bottom-left-radius: 0.625em;
+}
+
+.grid-professor{
+    display: grid;
+    grid-template-columns: 30px 1fr 70px;
+    column-gap: 0.625em;
+    border-top: 1px solid #E0E0E0;
+    align-items: center;
+}
+
+.professor-hour{
+    display: grid;
+    row-gap: 0.2em;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #64636F;
+}
+
+.time{
+    display: grid;
+    grid-template-columns: 15px 1fr;
+    gap: 0.4em;
+    color: #9F9FA5;
+    img{
+        width: 15px;
+        height: 15px;
+    }
+
+    span{
+        font-size: 10px;
+    }
+}
+
+
+img{
+    border-top-right-radius: 0.625em;
+    border-top-left-radius: 0.625em;
+    width: 275px; 
+    height: 175px;
+}
+
+h2{
+    font-size: 16px;
+    line-height: 22px;
+    text-align: right;
+    color: #E6B721;
+}
+
+h4{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    color: #AAAAAA;
+}
+
+h3{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2D3956;
+}

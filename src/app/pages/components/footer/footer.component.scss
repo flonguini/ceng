@@ -1,0 +1,88 @@
+@import "colors";
+@import "sizes";
+
+footer{
+    display: grid;
+    grid-template-rows: 300px 80px;
+    width: 100vw;
+    background-color: $footer-background;
+}
+
+.copyright{
+    background-color: $copyright-background;
+    color: $copyright-text;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: $footer-background;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+}
+
+img{
+    margin-left: 75px;
+}
+
+h4{
+    color: $copyright-text;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+button{
+    width: 163px;
+}
+
+input{
+    margin: 0.5em 0
+}
+
+.validate-certificate{
+    justify-self: end;
+    width: 300px;
+    margin-right: 75px;
+}
+
+.validate{
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 660px){
+    footer{
+        display: grid;
+        grid-template-rows: 360px 80px
+    }
+
+    .content-grid{
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, 1fr);
+        background-color: $footer-background;
+        justify-content: center;
+    }
+
+    .copyright{
+        font-size: $small;
+    }
+
+    .validate-certificate{
+        margin-right: 0;
+    }
+
+    img{
+        margin-left: 0;
+    }
+
+    .center-logo{
+        display: grid;
+        justify-content: center;
+    }
+}

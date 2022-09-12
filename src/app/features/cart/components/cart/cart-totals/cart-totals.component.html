@@ -1,0 +1,21 @@
+<div class="grid-cart-totals" *ngIf="store.courseStore.cart$ | async as cart">
+    <div>
+        <div class="cart-row">
+            <span class="text-item">SUBTOTAL</span>
+            <span class="cart-subtotal">{{(cart?.subtotal | currency) || '-'}}</span>
+        </div>
+    </div>
+    <div>
+        <div class="border-cart-row"></div>
+        <div class="cart-row">
+            <span class="text-item">DESCONTO CUPOM</span>
+            <span class="cart-discount">R$0,00</span>
+        </div>
+    </div>
+    <div>
+        <div class="cart-row cart-total">
+            <span>TOTAL</span>
+            <span>R$340,23</span>
+        </div>
+    </div>
+</div>

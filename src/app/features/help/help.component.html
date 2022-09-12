@@ -1,0 +1,40 @@
+<div class="wrapper">
+    <div class="grid-container max-width">
+        <div class="justify-center">
+            <app-title-subtitle
+                [title]="'Precisa de ajuda?'"
+                [subtitle]="'Confira nossos vídeos tutoriais'">
+            </app-title-subtitle>
+        </div>
+        
+        <div class="grid-help-category">
+            <app-category-card></app-category-card>
+            <app-category-card></app-category-card>
+            <app-category-card></app-category-card>
+            <app-category-card></app-category-card>
+            <app-category-card></app-category-card>
+        </div>
+        
+        <div class="grid-help-videos">
+            <app-help-card></app-help-card>
+            <app-help-card></app-help-card>
+            <app-help-card></app-help-card>
+            <app-help-card></app-help-card>
+            <app-help-card></app-help-card>
+            <app-help-card></app-help-card>
+            <app-help-card></app-help-card>
+            <app-help-card></app-help-card>
+        </div>
+        
+        <div class="justify-center">
+            <app-title-subtitle
+                [title]="'Perguntas frequentes'"
+                [subtitle]="'Aqui você pode encontrar algumas respostas para dúvidas em relação ao site Canal da Engenharia'">
+            </app-title-subtitle>
+        </div>
+        
+        <div>
+            <app-accordion [itens]="itens"></app-accordion>
+        </div>
+    </div>
+</div>
